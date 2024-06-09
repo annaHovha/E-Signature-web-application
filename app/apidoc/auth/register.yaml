@@ -1,0 +1,14 @@
+tags:
+  - auth
+consumes:
+  - application/json
+parameters:
+  - name: body
+    in: body
+    required: true
+    schema:
+      $ref: '#/definitions/RegisterRequest'
+responses:
+  201:
+    schema:
+      $ref: '#/definitions/RegisterResponse'

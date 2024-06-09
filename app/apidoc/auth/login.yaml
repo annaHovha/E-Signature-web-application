@@ -1,0 +1,21 @@
+tags:
+  - auth
+consumes:
+  - application/json
+parameters:
+  - name: body
+    in: body
+    required: true
+    schema:
+      $ref: '#/definitions/LoginRequest'
+responses:
+  200:
+    schema:
+      $ref: '#/definitions/AccessTokenResponse'
+  401:
+    schema:
+      $ref: '#/definitions/UnauthorizedResponse'
+  422:
+    schema:
+      $ref: '#/definitions/UnprocessableEntityResponse'
+

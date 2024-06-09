@@ -1,0 +1,15 @@
+tags:
+  - documents
+consumes:
+  - application/json
+parameters:
+  - name: body
+    in: body
+    required: true
+    schema:
+      $ref: '#/definitions/TemplateRequest'
+responses:
+  200:
+    description: OK
+    schema:
+      $ref: '#/definitions/TemplateResponse'

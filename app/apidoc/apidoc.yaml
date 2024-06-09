@@ -1,0 +1,101 @@
+---
+swagger: '2.0'
+
+info:
+  description: Workshop API documentation
+  title: Workshop API
+
+securityDefinitions:
+  Bearer:
+    type: apiKey
+    name: Authorization
+    in: header
+
+definitions:
+  LoginRequest:
+    type: object
+    properties:
+      email:
+        type: string
+      password:
+        type: string
+    required:
+      - email
+      - password
+
+  RegisterRequest:
+    type: object
+    properties:
+      email:
+        type: string
+      password:
+        type: string
+      first_name:
+        type: string
+      last_name:
+        type: string
+    required:
+      - email
+      - password
+      - first_name
+      - last_name
+
+  RegisterResponse:
+    type: object
+    properties:
+      message:
+        type: string
+
+  AccessTokenResponse:
+    type: object
+    properties:
+      access_token:
+        type: string
+      refresh_token:
+        type: string
+
+
+  UnauthorizedResponse:
+    type: object
+    properties:
+      error:
+        type: string
+
+  UnprocessableEntityResponse:
+    type: object
+    properties:
+      errors:
+        type: object
+        properties:
+          field:
+            type: array
+            items:
+              type: string
+
+  TemplateRequest:
+    type: object
+    properties:
+      email:
+        type: string
+      first_name:
+        type: string
+      last_name:
+        type: string
+      callback_url:
+        type: string
+      description:
+        type: string
+      required:
+      - email
+      - first_name
+      - last_name
+      - callback_url
+      - description
+
+  TemplateResponse:
+    type: object
+    properties:
+      envelope_id:
+        type: string
+      redirect_url:
+        type: string
